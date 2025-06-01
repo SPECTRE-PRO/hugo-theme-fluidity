@@ -52,7 +52,7 @@
                   <div class="divide-y divide-blue-100 dark:divide-blue-900/50">
                     {{- range .Pages -}}
                       {{- if eq .Kind "page" -}}
-                        {{- partial "partials/archive-article.html" . -}}
+                        {{- partial "archive-article.html" . -}}
                       {{- end -}}
                     {{- end -}}
                   </div>
