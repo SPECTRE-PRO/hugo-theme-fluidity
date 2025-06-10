@@ -197,9 +197,6 @@ function setupMobileMenu() {
 			hideMenu()
 		}
 	})
-
-	// Ensure initial state is closed
-	hideMenu();
 }
 
 function init() {
