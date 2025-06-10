@@ -23,7 +23,6 @@
       {{- else -}}
         {{- if eq site.Params.search.provider "pagefind" -}}
           <link href="{{ "pagefind/pagefind-ui.css" | absURL }}" rel="stylesheet" />
-          <script src="{{ "pagefind/pagefind.js" | absURL }}" type="module"></script>
           <script src="{{ "pagefind/pagefind-ui.js" | absURL }}" type="text/javascript"></script>
           <div class="fluidity-box-1 p-3 lg:p-6">
             <div id="search" class="py-2">

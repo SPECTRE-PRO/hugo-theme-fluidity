@@ -3,19 +3,15 @@
     <div class="mb-4 lg:mb-8">
       <h1 class="fluidity-page-title text-3xl group flex items-center gap-2 mb-1">
         <span class="fluidity-page-title-icon">
-          {{- if eq .Page.Data.Singular "tag" -}}
-            {{- partial "utils/icon.html" (dict "icon" "tags") -}}
-          {{- else if eq .Page.Data.Singular "category" -}}
-            {{- partial "utils/icon.html" (dict "icon" "categories") -}}
-          {{- end -}}
+          {{- partial "utils/icon.html" (dict "icon" "tags") -}}
         </span>
         <span class="relative">
-          {{- i18n .Page.Data.Singular | strings.Title -}}
+          {{- i18n "tag" | strings.Title -}}
           <span class="fluidity-page-title-line"></span>
         </span>
       </h1>
       <p class="fluidity-page-desc">
-        {{- i18n "total" | default "Total" | title }} {{ len .Data.Terms.Alphabetical }} {{ i18n .Page.Data.Singular | default "" -}}
+        {{- i18n "total" | default "Total" | title }} {{ len .Data.Terms.Alphabetical }} {{ i18n "tag" | default "Tags" -}}
       </p>
     </div>
 
