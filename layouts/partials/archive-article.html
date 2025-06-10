@@ -38,6 +38,28 @@
               {{- end -}}
             </div>
           {{- end -}}
+          {{- if and $showSummary .Truncated -}}
+            <div class="mt-2">
+              <a
+                href="{{ .Permalink | relURL }}"
+                aria-label="{{- i18n "readMore" | strings.Title }} about {{ .Title -}}"
+                class="inline-flex items-center justify-center gap-1.5
+                     px-4 h-9 text-sm font-medium rounded-lg
+                     transition-all duration-200 ease-out
+                     backdrop-blur-[2px]
+                  bg-gradient-to-r from-white/60 via-sky-50/60 to-blue-50/60 dark:from-slate-800/60 dark:via-sky-900/30
+                  dark:to-blue-900/30 text-sky-700 dark:text-sky-300 hover:from-sky-50/70 hover:via-sky-50/70
+                  hover:to-blue-50/70 dark:hover:from-sky-800/40 dark:hover:via-sky-800/40 dark:hover:to-blue-800/40 border
+                  border-slate-200/50 dark:border-slate-700/50 hover:border-sky-200/50 dark:hover:border-sky-700/50 shadow-sm
+                  shadow-slate-200/20 dark:shadow-slate-900/20 hover:shadow-md hover:shadow-sky-100/30
+                  dark:hover:shadow-sky-900/30 hover:-translate-y-0.5 hover:scale-[1.01]">
+                <span class="relative">
+                  {{- i18n "readMore" | strings.Title }}
+                </span>
+                <span class="sr-only">about {{ .Title }}</span>
+              </a>
+            </div>
+          {{- end -}}
           <div class="flex flex-col sm:flex-row items-start sm:items-center flex-wrap gap-x-3 gap-y-2">
             <!-- Categories -->
             {{- with $article.GetTerms "categories" -}}
